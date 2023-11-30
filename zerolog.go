@@ -17,7 +17,7 @@ func (zerolog Zerolog) Report(err error) {
 	switch typed := err.(type) {
 	case derp.SingleError:
 		buffer, _ := json.MarshalIndent(typed, "", "\t")
-		log.Error().Str("location", typed.Location).Str("message", typed.Message).RawJSON("details", buffer).Send()
+		log.Error().Str("loc", typed.Location).Str("message", typed.Message).RawJSON("details", buffer).Send()
 	default:
 		log.Error().Msg(err.Error())
 	}
