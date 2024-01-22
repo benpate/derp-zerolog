@@ -3,7 +3,7 @@ module github.com/benpate/derp-zerolog
 go 1.20
 
 require (
-	github.com/benpate/derp v0.28.2
+	github.com/benpate/derp v0.30.0
 	github.com/rs/zerolog v1.30.0
 )
 
