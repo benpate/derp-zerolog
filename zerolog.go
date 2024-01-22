@@ -15,7 +15,7 @@ type Zerolog struct{}
 func (zerolog Zerolog) Report(err error) {
 
 	switch typed := err.(type) {
-	case derp.SingleError:
+	case derp.Error:
 		buffer, _ := json.MarshalIndent(typed, "", "\t")
 		log.Error().Str("loc", typed.Location).Str("message", typed.Message).RawJSON("details", buffer).Send()
 	default:
